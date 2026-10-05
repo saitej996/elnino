@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>El Niño and it`s effects</title>
+
+    
+</head>
+
+<body> 
+    <style>
+        /* ================= GENERAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f5f8f2;
+    color: #26332a;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: #1b5e20;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+}
+
+
+/* ================= HOME / HERO ================= */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+
+    background:
+        linear-gradient(rgba(0, 70, 20, 0.65),
+        rgba(0, 0, 0, 0.55)),
+        url("https://thumbs.dreamstime.com/b/global-warming-climate-el-nino-la-nina-crisis-weather-effect-concept-extreme-hot-wave-heavy-storm-raining-element-nasa-318453110.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    background: #2e7d32;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #43a047;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background: #e65100;
+}
+
+.btn.secondary:hover {
+    background: #f57c00;
+}
+
+
+/* ================= SECTIONS ================= */
+
+.section {
+    padding: 60px 7%;
+}
+
+.section.light {
+    background: #eaf3e5;
+}
+
+.section h2 {
+    text-align: center;
+    color: #1b5e20;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.info-box {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-box p {
+    margin-bottom: 15px;
+}
+
+
+/* ================= CARDS ================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card span {
+    font-size: 40px;
+}
+
+.card h3 {
+    color: #2e7d32;
+    margin: 10px 0;
+}
+
+
+/* ================= PROBLEMS ================= */
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.problem {
+    background: white;
+    padding: 25px;
+    border-left: 5px solid #e65100;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.problem h3 {
+    color: #c62828;
+    margin-bottom: 10px;
+}
+
+
+/* ================= TABLE ================= */
+
+.crop-table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #2e7d32;
+    color: white;
+    padding: 15px;
+}
+
+td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f1f8e9;
+}
+
+tr:hover {
+    background: #dcedc8;
+}
+
+
+/* ================= WEATHER DASHBOARD ================= */
+
+.dashboard {
+    background: #dff1e2;
+    text-align: center;
+}
+
+.location-box {
+    margin: 25px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 650px;
+}
+
+.location-box input {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.location-box button {
+    background: #1b5e20;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.location-box button:hover {
+    background: #388e3c;
+}
+
+#loading {
+    display: none;
+    margin: 20px;
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+.weather-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.weather-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.weather-card h3 {
+    color: #1565c0;
+}
+
+.weather-card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.advice {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 20px;
+    background: #fff8e1;
+    border-left: 5px solid #ff9800;
+    border-radius: 8px;
+}
+
+
+/* ================= SOLUTIONS ================= */
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.solution-grid div {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.solution-grid h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+
+/* ================= GOVERNMENT ================= */
+
+.government-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.scheme {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.scheme h3 {
+    color: #1b5e20;
+    margin-bottom: 10px;
+}
+
+.scheme a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1565c0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.scheme a:hover {
+    text-decoration: underline;
+}
+
+.scheme strong {
+    display: block;
+    margin-top: 15px;
+    color: #d84315;
+    font-size: 18px;
+}
+
+
+/* ================= FORM ================= */
+
+#farmerForm {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #1b5e20;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #bbb;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 5px rgba(46,125,50,0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #d84315;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #bf360c;
+}
+
+#reportMessage {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .weather-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 40px 5%;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .cards,
+    .problem-grid,
+    .weather-grid,
+    .solution-grid,
+    .government-box {
+        grid-template-columns: 1fr;
+    }
+
+    .location-box {
+        flex-direction: column;
+    }
+
+    .location-box button {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    #farmerForm {
+        padding: 20px;
+    }
+
+}
+    </style>
+
+
+
+<header>
+    <div class="logo">
+        🌾 El Niño Farmer Support
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#el-nino">El Niño</a>
+        <a href="#problems">Problems</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#government">Government Help</a>
+        <a href="#report">Report</a>
+    </nav>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            🌎 El Niño and it`s effects
+        </h1>
+
+        <p>
+            Understanding climate change, protecting crops,
+            and supporting farmers through technology.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#dashboard" class="btn">
+                Check Weather
+            </a>
+
+            <a href="#report" class="btn secondary">
+                Report Crop Damage
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EL NINO ================= -->
+
+<section id="el-nino" class="section">
+
+    <h2>🌡️ What is El Niño?</h2>
+
+    <div class="info-box">
+
+        <p>
+            El Niño is a climate phenomenon associated with unusual
+            warming of ocean temperatures in the central and eastern
+            tropical Pacific Ocean.
+        </p>
+
+        <p>
+            El Niño can influence weather patterns in many parts of
+            the world. In some regions it can contribute to reduced
+            rainfall, drought conditions, higher temperatures or
+            unusual rainfall.
+        </p>
+
+        <p>
+            Farmers can be affected because changes in rainfall and
+            temperature can influence water availability, planting
+            schedules, crop growth and pest pressure.
+        </p>
+
+    </div>
+
+
+    <h2>🌍 Global Warming & Agriculture</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <span>🌡️</span>
+            <h3>Higher Temperature</h3>
+            <p>
+                Increasing temperatures can create heat stress
+                for crops and livestock.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🌧️</span>
+            <h3>Changing Rainfall</h3>
+            <p>
+                Rainfall patterns may become less predictable,
+                creating risks for farming.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>💧</span>
+            <h3>Water Shortage</h3>
+            <p>
+                Drought and reduced water availability can
+                affect irrigation and crop production.
+            </p>
+        </div>
+
+        <div class="card">
+            <span>🐛</span>
+            <h3>Pest Risk</h3>
+            <p>
+                Temperature and weather changes can influence
+                pest and disease conditions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FARMER PROBLEMS ================= -->
+
+<section id="problems" class="section light">
+
+    <h2>🌾 Main Problems Faced by Farmers</h2>
+
+    <div class="problem-grid">
+
+        <div class="problem">
+            <h3>🌧️ Irregular Rainfall</h3>
+            <p>
+                Farmers may experience delayed rainfall,
+                insufficient rainfall or unexpected heavy rain.
+            </p>
+        </div>
+
+        <div class="problem">
+            <h3>🔥 Extreme Heat</h3>
+            <p>
+                High temperatures can cause heat stress and
+                reduce crop productivity.
+            </p>
+        </div>
+
+        <div class="problem">
+            <h3>💧 Lack of Water</h3>
+            <p>
+                Drought conditions can reduce water available
+                for irrigation.
+            </p>
+        </div>
+
+        <div class="problem">
+            <h3>🌱 Crop Damage</h3>
+            <p>
+                Weather extremes can damage crops during
+                important growth stages.
+            </p>
+        </div>
+
+        <div class="problem">
+            <h3>🐛 Pests & Diseases</h3>
+            <p>
+                Changing weather conditions can increase
+                some pest and disease risks.
+            </p>
+        </div>
+
+        <div class="problem">
+            <h3>💰 Financial Loss</h3>
+            <p>
+                Crop losses can reduce farmer income and
+                increase production costs.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CROP DAMAGE ================= -->
+
+<section class="section">
+
+    <h2>🌱 Crop Damage Information</h2>
+
+    <div class="crop-table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Crop</th>
+                    <th>Possible Climate Risk</th>
+                    <th>Possible Effect</th>
+                    <th>Basic Protection</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>🌾 Rice</td>
+                    <td>Water shortage / heat</td>
+                    <td>Reduced growth</td>
+                    <td>Efficient irrigation</td>
+                </tr>
+
+                <tr>
+                    <td>🌽 Maize</td>
+                    <td>Heat / drought</td>
+                    <td>Lower yield</td>
+                    <td>Water management</td>
+                </tr>
+
+                <tr>
+                    <td>🌶️ Chilli</td>
+                    <td>Heat / pests</td>
+                    <td>Fruit damage</td>
+                    <td>Regular monitoring</td>
+                </tr>
+
+                <tr>
+                    <td>🥜 Groundnut</td>
+                    <td>Drought</td>
+                    <td>Poor crop development</td>
+                    <td>Moisture conservation</td>
+                </tr>
+
+                <tr>
+                    <td>🍅 Tomato</td>
+                    <td>Heat / disease</td>
+                    <td>Flower and fruit problems</td>
+                    <td>Field monitoring</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WEATHER DASHBOARD ================= -->
+
+<section id="dashboard" class="section dashboard">
+
+    <h2>📊 Live Farmer Weather Dashboard</h2>
+
+    <p>
+        Enter your location to retrieve current weather information.
+    </p>
+
+    <div class="location-box">
+
+        <input
+            type="text"
+            id="locationInput"
+            placeholder="Enter village / city"
+        >
+
+        <button onclick="getWeather()">
+            🔍 Check Weather
+        </button>
+
+    </div>
+
+
+    <div id="loading">
+        Loading weather...
+    </div>
+
+
+    <div id="weatherResult" class="weather-grid">
+
+        <div class="weather-card">
+            <h3>🌡️ Temperature</h3>
+            <p id="temperature">--</p>
+        </div>
+
+        <div class="weather-card">
+            <h3>🌧️ Rainfall</h3>
+            <p id="rainfall">--</p>
+        </div>
+
+        <div class="weather-card">
+            <h3>💧 Humidity</h3>
+            <p id="humidity">--</p>
+        </div>
+
+        <div class="weather-card">
+            <h3>💨 Wind Speed</h3>
+            <p id="wind">--</p>
+        </div>
+
+    </div>
+
+
+    <div id="weatherAdvice" class="advice"></div>
+
+</section>
+
+
+<!-- ================= SOLUTIONS ================= -->
+
+<section id="solutions" class="section light">
+
+    <h2>💡 Solutions & Prevention</h2>
+
+    <div class="solution-grid">
+
+        <div>
+            <h3>💧 Water Management</h3>
+            <p>
+                Use efficient irrigation methods and conserve
+                available water.
+            </p>
+        </div>
+
+        <div>
+            <h3>🌱 Climate-Smart Crops</h3>
+            <p>
+                Consider locally recommended crop varieties
+                suited to expected conditions.
+            </p>
+        </div>
+
+        <div>
+            <h3>🌾 Crop Diversification</h3>
+            <p>
+                Growing different crops can help reduce
+                dependence on a single crop.
+            </p>
+        </div>
+
+        <div>
+            <h3>🌦️ Weather Monitoring</h3>
+            <p>
+                Check reliable weather information before
+                important farming operations.
+            </p>
+        </div>
+
+        <div>
+            <h3>🐛 Field Monitoring</h3>
+            <p>
+                Regularly inspect crops for pests and diseases
+                and follow local agricultural advice.
+            </p>
+        </div>
+
+        <div>
+            <h3>📱 Digital Technology</h3>
+            <p>
+                Use weather and agricultural information systems
+                to support farming decisions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GOVERNMENT HELP ================= -->
+
+<section id="government" class="section">
+
+    <h2>🏛️ Government Support</h2>
+
+    <div class="government-box">
+
+        <div class="scheme">
+            <h3>🌾 PM-KISAN</h3>
+            <p>
+                Central government income-support scheme for
+                eligible farmer families.
+            </p>
+
+            <a
+                href="https://pmkisan.gov.in/"
+                target="_blank"
+            >
+                Official Website →
+            </a>
+        </div>
+
+
+        <div class="scheme">
+            <h3>🛡️ PMFBY</h3>
+            <p>
+                Crop insurance scheme intended to provide
+                financial protection against specified crop losses.
+            </p>
+
+            <a
+                href="https://pmfby.gov.in/"
+                target="_blank"
+            >
+                Official Website →
+            </a>
+        </div>
+
+
+        <div class="scheme">
+            <h3>🌱 Soil Health Card</h3>
+            <p>
+                Soil information can help farmers make better
+                nutrient-management decisions.
+            </p>
+
+            <a
+                href="https://soilhealth.dac.gov.in/"
+                target="_blank"
+            >
+                Official Website →
+            </a>
+        </div>
+
+
+        <div class="scheme">
+            <h3>📞 Kisan Call Centre</h3>
+            <p>
+                Farmers can seek agricultural information
+                through the Kisan Call Centre.
+            </p>
+
+            <strong>☎️ 1800-180-1551</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FARMER REPORT ================= -->
+
+<section id="report" class="section light">
+
+    <h2>🆘 Farmer Crop Damage Report</h2>
+
+    <p>
+        Use this form to record a crop/weather problem locally.
+    </p>
+
+    <form id="farmerForm">
+
+        <div class="form-group">
+
+            <label>Farmer Name</label>
+
+            <input
+                type="text"
+                id="farmerName"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="phone"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Village / Location</label>
+
+            <input
+                type="text"
+                id="farmerLocation"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Crop</label>
+
+            <select id="crop">
+
+                <option value="Rice">Rice</option>
+                <option value="Maize">Maize</option>
+                <option value="Groundnut">Groundnut</option>
+                <option value="Chilli">Chilli</option>
+                <option value="Tomato">Tomato</option>
+                <option value="Other">Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Problem</label>
+
+            <select id="problem">
+
+                <option value="Drought">
+                    Drought / Water Shortage
+                </option>
+
+                <option value="Heavy Rain">
+                    Heavy Rain
+                </option>
+
+                <option value="Extreme Heat">
+                    Extreme Heat
+                </option>
+
+                <option value="Pest">
+                    Pest Problem
+                </option>
+
+                <option value="Disease">
+                    Crop Disease
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Description</label>
+
+            <textarea
+                id="description"
+                rows="5"
+                required
+            ></textarea>
+
+        </div>
+
+
+        <button type="submit" class="submit-btn">
+            🚨 Submit Report
+        </button>
+
+    </form>
+
+
+    <div id="reportMessage"></div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>🌾 El Niño Farmer Support System</h3>
+
+    <p>
+        Technology for climate awareness and farmer support.
+    </p>
+
+    <p>
+        © 2026 Farmer Support Project
+    </p>
+
+</footer>
+
+
+<script >
+    // =====================================================
+// EL NINO FARMER SUPPORT SYSTEM
+// JavaScript + Open-Meteo API
+// =====================================================
+
+
+// ================= WEATHER API =================
+
+async function getWeather() {
+
+    const location =
+        document.getElementById("locationInput").value.trim();
+
+    if (location === "") {
+
+        alert("Please enter your village or city.");
+
+        return;
+    }
+
+
+    const loading =
+        document.getElementById("loading");
+
+    loading.style.display = "block";
+
+
+    try {
+
+        // -----------------------------------------
+        // STEP 1: Find location coordinates
+        // -----------------------------------------
+
+        const geoURL =
+            `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(location)}&count=1&language=en&format=json`;
+
+        const geoResponse =
+            await fetch(geoURL);
+
+        if (!geoResponse.ok) {
+
+            throw new Error("Location API failed.");
+
+        }
+
+        const geoData =
+            await geoResponse.json();
+
+
+        if (!geoData.results ||
+            geoData.results.length === 0) {
+
+            throw new Error(
+                "Location not found."
+            );
+        }
+
+
+        const place =
+            geoData.results[0];
+
+
+        const latitude =
+            place.latitude;
+
+        const longitude =
+            place.longitude;
+
+
+        // -----------------------------------------
+        // STEP 2: Get current weather
+        // -----------------------------------------
+
+        const weatherURL =
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m&timezone=auto`;
+
+        const weatherResponse =
+            await fetch(weatherURL);
+
+
+        if (!weatherResponse.ok) {
+
+            throw new Error(
+                "Weather API failed."
+            );
+
+        }
+
+
+        const weatherData =
+            await weatherResponse.json();
+
+
+        const current =
+            weatherData.current;
+
+
+        // -----------------------------------------
+        // STEP 3: Display data
+        // -----------------------------------------
+
+        document.getElementById("temperature")
+            .textContent =
+            current.temperature_2m +
+            " °C";
+
+
+        document.getElementById("rainfall")
+            .textContent =
+            current.precipitation +
+            " mm";
+
+
+        document.getElementById("humidity")
+            .textContent =
+            current.relative_humidity_2m +
+            " %";
+
+
+        document.getElementById("wind")
+            .textContent =
+            current.wind_speed_10m +
+            " km/h";
+
+
+        // -----------------------------------------
+        // STEP 4: Farmer advice
+        // -----------------------------------------
+
+        generateAdvice(
+            current.temperature_2m,
+            current.precipitation,
+            current.relative_humidity_2m
+        );
+
+
+    } catch (error) {
+
+        alert(error.message);
+
+        console.error(error);
+
+    } finally {
+
+        loading.style.display = "none";
+
+    }
+}
+
+
+
+// =====================================================
+// FARMER WEATHER ADVICE
+// =====================================================
+
+function generateAdvice(
+    temperature,
+    rainfall,
+    humidity
+) {
+
+    const advice =
+        document.getElementById("weatherAdvice");
+
+
+    let message = "";
+
+
+    if (temperature >= 38) {
+
+        message +=
+            "🔥 High temperature detected. " +
+            "Monitor crops for heat stress and manage available water carefully. ";
+
+    }
+
+
+    if (rainfall === 0) {
+
+        message +=
+            "💧 No current precipitation reported. " +
+            "Check soil moisture and irrigation requirements. ";
+
+    }
+
+
+    if (humidity >= 80) {
+
+        message +=
+            "🐛 High humidity can favor some crop diseases. " +
+            "Inspect crops regularly. ";
+
+    }
+
+
+    if (message === "") {
+
+        message =
+            "🌱 Current conditions do not indicate an immediate " +
+            "weather-related warning from these basic thresholds. " +
+            "Continue monitoring your local forecast and crop condition.";
+
+    }
+
+
+    advice.textContent = message;
+
+}
+
+
+
+// =====================================================
+// FARMER REPORT FORM
+// =====================================================
+
+const farmerForm =
+    document.getElementById("farmerForm");
+
+
+farmerForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const report = {
+
+            name:
+                document.getElementById(
+                    "farmerName"
+                ).value,
+
+            phone:
+                document.getElementById(
+                    "phone"
+                ).value,
+
+            location:
+                document.getElementById(
+                    "farmerLocation"
+                ).value,
+
+            crop:
+                document.getElementById(
+                    "crop"
+                ).value,
+
+            problem:
+                document.getElementById(
+                    "problem"
+                ).value,
+
+            description:
+                document.getElementById(
+                    "description"
+                ).value,
+
+            date:
+                new Date().toLocaleString()
+
+        };
+
+
+        // -----------------------------------------
+        // Save report in localStorage
+        // -----------------------------------------
+
+        let reports =
+            JSON.parse(
+                localStorage.getItem(
+                    "farmerReports"
+                )
+            ) || [];
+
+
+        reports.push(report);
+
+
+        localStorage.setItem(
+            "farmerReports",
+            JSON.stringify(reports)
+        );
+
+
+        document.getElementById(
+            "reportMessage"
+        ).innerHTML =
+
+            `
+            <div style="
+                background:#d9f5df;
+                padding:20px;
+                border-radius:10px;
+                margin-top:20px;
+            ">
+
+                ✅ Farmer report submitted successfully!
+
+                <br><br>
+
+                Your report has been saved
+                locally in this browser.
+
+            </div>
+            `;
+
+
+        farmerForm.reset();
+
+    }
+);
+
+
+
+// =====================================================
+// ENTER KEY FOR WEATHER SEARCH
+// =====================================================
+
+document.getElementById(
+    "locationInput"
+).addEventListener(
+    "keypress",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            getWeather();
+
+        }
+
+    }
+);
+</script>
+
+</body>
+</html>
